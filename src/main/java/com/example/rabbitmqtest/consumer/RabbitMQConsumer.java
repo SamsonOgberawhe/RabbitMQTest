@@ -14,4 +14,10 @@ public class RabbitMQConsumer {
     public void consumeMessage(String message){
         logger.info("Message received -> {}", message);
     }
+
+    @RabbitListener(queues = "${spring.rabbitmq.json.queue.name}")
+    public void consumeJson(String message){
+        logger.info("Message received -> {}", message);
+
+    }
 }

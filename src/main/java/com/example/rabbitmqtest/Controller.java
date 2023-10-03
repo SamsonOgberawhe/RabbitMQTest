@@ -27,7 +27,7 @@ public class Controller {
     }
 
     @PostMapping("publish/json")
-    public String publishJson(@RequestBody UserDto userDto){
+    public String publishJson(@RequestBody UserDto userDto) throws InstantiationException, IllegalAccessException {
         jsonProducer.sendMessage(userDto);
         return "JSON Message sent successfully";
     }
